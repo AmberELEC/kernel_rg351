@@ -678,6 +678,7 @@ KBUILD_CFLAGS   += $(call cc-disable-warning,array-compare)
 KBUILD_CFLAGS   += $(call cc-disable-warning,stringop-overread)
 KBUILD_CFLAGS   += $(call cc-disable-warning,dangling-pointer)
 KBUILD_CFLAGS   += $(call cc-disable-warning,address)
+KBUILD_CFLAGS   += $(call cc-disable-warning,enum-int-mismatch)
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
