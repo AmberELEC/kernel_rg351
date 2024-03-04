@@ -348,4 +348,10 @@ config JOYSTICK_ODROIDGO3
 	depends on ARCH_ROCKCHIP_ODROIDGOA
 	help
 	  Made for ODROIDGO3.
+
+config JOYSTICK_XU10
+        tristate "XU10 joypad driver"
+        depends on ARCH_ROCKCHIP_ODROIDGOA
+        help
+          Made for XU10.
 endif
