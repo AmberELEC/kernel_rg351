@@ -1850,7 +1850,7 @@
 	dmc_opp_table: dmc-opp-table {
 		compatible = "operating-points-v2";
 
-		rockchip,max-volt = <1150000>;
+		rockchip,max-volt = <1200000>;
 		rockchip,evb-irdrop = <25000>;
 
 		rockchip,pvtm-voltage-sel = <
