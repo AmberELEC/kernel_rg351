@@ -1120,7 +1120,7 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&i2s1_2ch_mclk>;
 			hp-volume = <20>;
-			spk-volume = <3>;
+			spk-volume = <0>;
 			status = "okay";
 		};
 	};
