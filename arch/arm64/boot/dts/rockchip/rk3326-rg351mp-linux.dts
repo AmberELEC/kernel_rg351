@@ -361,15 +361,119 @@
 
 	/* bin scaling clock 1.296MHz */
 	rockchip,bin-scaling-sel = <
-		0               13
-		1               13
+		0	10
+		1	13
+		2	16
+		3	20
 	>;
 
 	/delete-node/ opp-408000000;
 	/delete-node/ opp-600000000;
-	/delete-node/ opp-816000000;
+	/delete-node/ opp-696000000;
+	/delete-node/ opp-600000000;
 	/delete-node/ opp-1416000000;
 	/delete-node/ opp-1512000000;
+
+	opp-816000000 {
+		opp-hz = /bits/ 64 <816000000>;
+		opp-microvolt = <1050000 1050000 1350000>;
+		opp-microvolt-L0 = <1050000 1050000 1350000>;
+		opp-microvolt-L1 = <1000000 1000000 1350000>;
+		opp-microvolt-L2 = <1000000 1000000 1350000>;
+		opp-microvolt-L3 = <950000  950000  1350000>;
+		clock-latency-ns = <40000>;
+		opp-suspend;
+	};
+
+	opp-912000000 {
+		opp-hz = /bits/ 64 <912000000>;
+		opp-microvolt = <1125000 1125000 1350000>;
+		opp-microvolt-L0 = <1125000 1125000 1350000>;
+		opp-microvolt-L1 = <1075000 1075000 1350000>;
+		opp-microvolt-L2 = <1075000 1075000 1350000>;
+		opp-microvolt-L3 = <1000000 1000000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1008000000 {
+		opp-hz = /bits/ 64 <1008000000>;
+		opp-microvolt = <1175000 1175000 1350000>;
+		opp-microvolt-L0 = <1175000 1175000 1350000>;
+		opp-microvolt-L1 = <1125000 1125000 1350000>;
+		opp-microvolt-L2 = <1125000 1125000 1350000>;
+		opp-microvolt-L3 = <1050000 1050000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1104000000 {
+		opp-hz = /bits/ 64 <1104000000>;
+		opp-microvolt = <1250000 1250000 1350000>;
+		opp-microvolt-L0 = <1250000 1250000 1350000>;
+		opp-microvolt-L1 = <1200000 1200000>;
+		opp-microvolt-L2 = <1200000 1200000 1350000>;
+		opp-microvolt-L3 = <1125000 1125000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1200000000 {
+		opp-hz = /bits/ 64 <1200000000>;
+		opp-microvolt = <1300000 1300000 1350000>;
+		opp-microvolt-L0 = <1300000 1300000 1350000>;
+		opp-microvolt-L1 = <1275000 1275000 1350000>;
+		opp-microvolt-L2 = <1250000 1250000 1350000>;
+		opp-microvolt-L3 = <1200000 1200000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1248000000 {
+		opp-hz = /bits/ 64 <1248000000>;
+		opp-microvolt = <1350000 1350000 1350000>;
+		opp-microvolt-L0 = <1350000 1350000 1350000>;
+		opp-microvolt-L1 = <1300000 1300000 1350000>;
+		opp-microvolt-L2 = <1275000 1275000 1350000>;
+		opp-microvolt-L3 = <1225000 1225000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1296000000 {
+		opp-hz = /bits/ 64 <1296000000>;
+		opp-microvolt = <1350000 1350000 1350000>;
+		opp-microvolt-L0 = <1350000 1350000 1350000>;
+		opp-microvolt-L1 = <1350000 1350000 1350000>;
+		opp-microvolt-L2 = <1300000 1300000 1350000>;
+		opp-microvolt-L3 = <1250000 1250000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1320000000 {
+		opp-hz = /bits/ 64 <1320000000>;
+		opp-microvolt = <1350000 1350000 1350000>;
+		opp-microvolt-L0 = <1350000 1350000 1350000>;
+		opp-microvolt-L1 = <1350000 1350000 1350000>;
+		opp-microvolt-L2 = <1300000 1300000 1350000>;
+		opp-microvolt-L3 = <1250000 1250000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1344000000 {
+		opp-hz = /bits/ 64 <1344000000>;
+		opp-microvolt = <1350000 1350000 1350000>;
+		opp-microvolt-L0 = <1350000 1350000 1350000>;
+		opp-microvolt-L1 = <1350000 1350000 1350000>;
+		opp-microvolt-L2 = <1300000 1300000 1350000>;
+		opp-microvolt-L3 = <1250000 1250000 1350000>;
+		clock-latency-ns = <40000>;
+	};
+
+	opp-1368000000 {
+		opp-hz = /bits/ 64 <1368000000>;
+		opp-microvolt = <1350000 1350000 1350000>;
+		opp-microvolt-L0 = <1350000 1350000 1350000>;
+		opp-microvolt-L1 = <1350000 1350000 1350000>;
+		opp-microvolt-L2 = <1300000 1300000 1350000>;
+		opp-microvolt-L3 = <1250000 1250000 1350000>;
+		clock-latency-ns = <40000>;
+	};
 };
 
 &display_subsystem {
@@ -665,7 +769,7 @@
 		status = "okay";
 		compatible = "elida,kd35t133", "simple-panel-dsi";
 		/* don't register this panel */
-		//reg = <0>; 
+		//reg = <0>;
 		id = [38 21];
 		backlight = <&backlight>;
 		//power-supply = <&vcc_lcd>;
@@ -693,7 +797,7 @@
 			15 00 03 b5 0a 0a
 			15 00 03 b6 7f 7f
 			39 00 05 b8 26 62 f0 63
-			39 00 1c ba 33 81 05 f9 0e 0e 20 00 00 00 00 00 00 00 
+			39 00 1c ba 33 81 05 f9 0e 0e 20 00 00 00 00 00 00 00
 				 44 25 00 90 0a 00 00 01 4f 01 00 00 37
 			15 00 02 bc 47
 			39 00 04 bf 02 11 00
@@ -711,7 +815,7 @@
 				 27 08 00 04 02 00 00 00 00 04 02 00 00 00 88
 				 88 ba 60 24 08 88 88 88 88 88 88 88 ba 71 35
 				 18 88 88 88 88 88 00 00 00 01 00 00 00 00 00
-				 00 00 00 00   
+				 00 00 00 00
 			39 00 3e ea 97 0a 82 02 03 07 00 00 00 00 00 00 81 88
 				 ba 17 53 88 88 88 88 88 88 80 88 ba 06 42 88
 				 88 88 88 88 88 23 00 00 02 80 00 00 00 00 00
@@ -761,23 +865,56 @@
 };
 
 &dmc {
-	center-supply = <&vdd_logic>;
 	status = "okay";
+	center-supply = <&vdd_logic>;
+	upthreshold = <40>;
+	downdifferential = <20>;
+	system-status-freq = <
+		/*system status         freq(KHz)*/
+		SYS_STATUS_NORMAL       666000
+		SYS_STATUS_REBOOT       786000
+		SYS_STATUS_SUSPEND      450000
+		SYS_STATUS_VIDEO_1080P  666000
+		SYS_STATUS_VIDEO_4K     786000
+		SYS_STATUS_VIDEO_4K_10B 786000
+		SYS_STATUS_PERFORMANCE  850000
+		SYS_STATUS_BOOST        850000
+		SYS_STATUS_DUALVIEW     786000
+		SYS_STATUS_ISP          786000
+	>;
+
+	auto-min-freq = <450000>;
+	auto-freq-en = <1>;
 };
 
 &dmc_opp_table {
 	/delete-node/ opp-194000000;
 	/delete-node/ opp-328000000;
-	/delete-node/ opp-450000000;
+	/delete-node/ opp-786000000;
+
+	opp-450000000 {
+		opp-hz = /bits/ 64 <450000000>;
+		opp-microvolt = <950000>;
+	};
+
+	opp-528000000 {
+		opp-hz = /bits/ 64 <528000000>;
+		opp-microvolt = <975000>;
+	};
+
+	opp-666000000 {
+		opp-hz = /bits/ 64 <666000000>;
+		opp-microvolt = <1050000>;
+	};
 
 	opp-786000000 {
 		opp-hz = /bits/ 64 <786000000>;
 		opp-microvolt = <1150000>;
-		opp-microvolt-L0 = <1150000>;
-		opp-microvolt-L1 = <1100000>;
-		opp-microvolt-L2 = <1075000>;
-		opp-microvolt-L3 = <1050000>;
-		status = "okay";
+	};
+
+	opp-840000000 {
+		opp-hz = /bits/ 64 <840000000>;
+		opp-microvolt = <1150000>;
 	};
 };
 
@@ -793,6 +930,51 @@
 &gpu_opp_table {
 	/delete-node/ opp-200000000;
 	/delete-node/ opp-300000000;
+	/delete-node/ opp-520000000;
+
+	opp-400000000 {
+		opp-hz = /bits/ 64 <400000000>;
+		opp-microvolt = <1050000>;
+		opp-microvolt-L0 = <1050000>;
+		opp-microvolt-L1 = <1025000>;
+		opp-microvolt-L2 = <975000>;
+		opp-microvolt-L3 = <950000>;
+	};
+	opp-480000000 {
+		opp-hz = /bits/ 64 <480000000>;
+		opp-microvolt = <1125000>;
+		opp-microvolt-L0 = <1125000>;
+		opp-microvolt-L1 = <1100000>;
+		opp-microvolt-L2 = <1050000>;
+		opp-microvolt-L3 = <1000000>;
+	};
+
+	opp-520000000 {
+		opp-hz = /bits/ 64 <520000000>;
+		opp-microvolt = <1150000>;
+		opp-microvolt-L0 = <1150000>;
+		opp-microvolt-L1 = <1150000>;
+		opp-microvolt-L2 = <1100000>;
+		opp-microvolt-L3 = <1050000>;
+	};
+
+	opp-540000000 {
+		opp-hz = /bits/ 64 <540000000>;
+		opp-microvolt = <1150000>;
+		opp-microvolt-L0 = <1150000>;
+		opp-microvolt-L1 = <1150000>;
+		opp-microvolt-L2 = <1100000>;
+		opp-microvolt-L3 = <1050000>;
+	};
+
+	opp-560000000 {
+		opp-hz = /bits/ 64 <560000000>;
+		opp-microvolt = <1150000>;
+		opp-microvolt-L0 = <1150000>;
+		opp-microvolt-L1 = <1150000>;
+		opp-microvolt-L2 = <1100000>;
+		opp-microvolt-L3 = <1050000>;
+	};
 };
 
 &i2c0 {
