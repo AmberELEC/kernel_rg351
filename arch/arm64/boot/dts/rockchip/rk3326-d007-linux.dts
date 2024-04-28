@@ -158,9 +158,9 @@
 		switch-rxy;
 
 		/* gpio button auto repeat set value : default disable */
-		/**/
+		/*
 			autorepeat;
-		
+		*/
 
 		/*
 		      *** ODROIDGO3-Advance Switch layoout ***
