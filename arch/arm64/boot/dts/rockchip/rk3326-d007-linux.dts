@@ -23,42 +23,45 @@
                 bootargs = "";
 	};
 
-	adc_keys: rg351-keys {
-		compatible = "adc-keys";
+
+	vol_keys: rg351-keys {
+		compatible = "rockchip,key";
 		io-channels = <&saradc 2>;
-		io-channel-names = "buttons";
-		poll-interval = <100>;
-		keyup-threshold-microvolt = <1800000>;
-		autorepeat;
 
 		vol-down-key {
 			linux,code = <KEY_VOLUMEDOWN>;
 			label = "volume down";
-			press-threshold-microvolt = <300000>;
+			rockchip,adc_value = <166>;
 		};
 
 		vol-up-key {
 			linux,code = <KEY_VOLUMEUP>;
 			label = "volume up";
-			press-threshold-microvolt = <17000>;
+			rockchip,adc_value = <9>;
 		};
+	};
 
-		esc-key {
-			linux,code = <KEY_ESC>;
-			label = "esc/FN";
-			press-threshold-microvolt = <1310000>;
-		};
+
+	func_keys: func-keys {
+		compatible = "rockchip,key";
+		io-channels = <&saradc 2>;
 
 		select-key {
 			linux,code = <KEY_RIGHTSHIFT>;
 			label = "select";
-			press-threshold-microvolt = <624000>;
+			rockchip,adc_value = <347>;
 		};
 
 		start-key {
 			linux,code = <KEY_ENTER>;
 			label = "start";
-			press-threshold-microvolt = <987000>;
+			rockchip,adc_value = <553>;
+		};
+
+		esc-key {
+			linux,code = <KEY_ESC>;
+			label = "esc/FN";
+			rockchip,adc_value = <740>;
 		};
 	};
 
@@ -155,9 +158,9 @@
 		switch-rxy;
 
 		/* gpio button auto repeat set value : default disable */
-		/**/
+		/*
 			autorepeat;
-		
+		*/
 
 		/*
 		      *** ODROIDGO3-Advance Switch layoout ***
