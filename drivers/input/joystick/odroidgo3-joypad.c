@@ -157,6 +157,7 @@ struct joypad {
 	struct input_dev *input;
 	struct pwm_device *pwm;
 	struct work_struct play_work;
+	bool rumble_keep_enabled;
 	u16 level;
 	u16 boost_weak;
 	u16 boost_strong;
@@ -183,7 +184,22 @@ static int pwm_vibrator_start(struct joypad *joypad)
 
 static void pwm_vibrator_stop(struct joypad *joypad)
 {
-	pwm_disable(joypad->pwm);
+	struct device *pdev = joypad->input->dev.parent;
+	struct pwm_state state;
+	int err;
+
+	if (!joypad->rumble_keep_enabled) {
+		pwm_disable(joypad->pwm);
+		return;
+	}
+
+	/* Some boards need the PWM output driven inactive while idle. */
+	pwm_get_state(joypad->pwm, &state);
+	pwm_set_relative_duty_cycle(&state, 0, 0xffff);
+	state.enabled = true;
+	err = pwm_apply_state(joypad->pwm, &state);
+	if (err)
+		dev_err(pdev, "failed to apply idle pwm state: %d", err);
 }
 
 static void pwm_vibrator_play_work(struct work_struct *work)
@@ -1099,10 +1115,12 @@ static int joypad_rumble_setup(struct device *dev, struct joypad *joypad)
 	}
 
 	INIT_WORK(&joypad->play_work, pwm_vibrator_play_work);
+	joypad->rumble_keep_enabled = of_property_read_bool(dev->of_node,
+							 "rumble-keep-enabled");
 
 	/* Sync up PWM state and ensure it is off. */
 	pwm_init_state(joypad->pwm, &state);
-	state.enabled = false;
+	state.enabled = joypad->rumble_keep_enabled;
 	err = pwm_apply_state(joypad->pwm, &state);
 	if (err) {
 		dev_err(dev, "failed to apply initial PWM state: %d",
