@@ -4,7 +4,7 @@
 * Copyright (C) 2024-present Oendaril (https://github.com/Oendaril)
 */
 /*
- * SARADC joystick & GPIO Button driver for Linux(PowKiddy Magicx XU10)
+ * SARADC joystick & GPIO Button driver for Linux(Magicx XU10)
  */
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -1135,7 +1135,7 @@ module_exit(joypad_exit);
 
 /*----------------------------------------------------------------------------*/
 MODULE_AUTHOR("Hardkernel Co.,LTD");
-MODULE_DESCRIPTION("Keypad driver(ADC&GPIO) for PowKiddy Magicx XU10");
+MODULE_DESCRIPTION("Keypad driver(ADC&GPIO) for Magicx XU10");
 MODULE_LICENSE("GPL v2");
 MODULE_ALIAS("platform:" DRV_NAME);
 
